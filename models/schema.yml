@@ -1,0 +1,38 @@
+version: 2
+
+models:
+
+    - name: sales
+      description: One line by product, Info about sales
+      tests:
+        - unique:
+            column_name: "(orders_id || '-' || products_id)"
+            
+            
+      columns:
+          - name: orders_id
+            description: unique num for each order 
+            tests : 
+              - not_null 
+
+          - name: products_id
+            description: a unique num for each product in the stock
+            tests :
+              - not_null
+                                  
+
+          - name: qty
+
+          - name: turnover
+            description: the total amount that you paid
+            tests :
+               - not_null
+                  
+
+          - name: purchase_cost
+            description: it is the cost per product with all the necesity things
+                 - not_null
+            
+
+          - name: margin
+            description: total income after costs
